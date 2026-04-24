@@ -1,0 +1,34 @@
+[
+  {
+    "name": "spec-kit",
+    "local_dir": "spec-kit",
+    "url": "https://github.com/github/spec-kit.git",
+    "status": "up-to-date",
+    "previous_revision": "efb04e26ebd21d2640e3d4dd9f7e5e1e2e385080",
+    "current_revision": "efb04e26ebd21d2640e3d4dd9f7e5e1e2e385080"
+  },
+  {
+    "name": "openspec",
+    "local_dir": "openspec",
+    "url": "https://github.com/fission-ai/openspec.git",
+    "status": "up-to-date",
+    "previous_revision": "3c7a05c5dc88b2397c478805890b55ed392b19e8",
+    "current_revision": "3c7a05c5dc88b2397c478805890b55ed392b19e8"
+  },
+  {
+    "name": "superpowers",
+    "local_dir": "superpowers",
+    "url": "https://github.com/obra/superpowers.git",
+    "status": "up-to-date",
+    "previous_revision": "b55764852ac78870e65c6565fb585b6cd8b3c5c9",
+    "current_revision": "b55764852ac78870e65c6565fb585b6cd8b3c5c9"
+  },
+  {
+    "name": "karpathy-skills",
+    "local_dir": "andrej-karpathy-skills",
+    "url": "https://github.com/forrestchang/andrej-karpathy-skills.git",
+    "status": "up-to-date",
+    "previous_revision": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "current_revision": "2c606141936f1eeef17fa3043a72095b4765b9c2"
+  }
+]

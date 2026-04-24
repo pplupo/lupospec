@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lupospec"
+version = "0.1.0"
+description = "Lupo Spec — a hybrid Spec-Driven Development CLI orchestrator."
+readme = "lupospec.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+lupo = "src.lupospec_cli:app"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
