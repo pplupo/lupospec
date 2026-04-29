@@ -63,7 +63,7 @@ Every single extracted and ported block inside the `/src/core/` files must be wr
 * **Language:** Python 3.11+
 * **CLI Framework:** `Typer` or `Click` for terminal interfaces.
 * **Process Management:** Python `subprocess` module to stream terminal output.
-* **Execution Agent:** By default, it expects the user has an agent CLI like `aider` available in their path to handle the LLM execution.
+* **Execution Agent:** Targets **Void Editor** (AI-native code editor, fork of VS Code) via the `void` CLI binary.
 
 ### CLI Command Mapping & Core Logic
 

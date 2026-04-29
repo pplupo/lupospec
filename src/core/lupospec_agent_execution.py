@@ -322,7 +322,7 @@ def parse_tasks(proposal_path: Path) -> list[str]:
 
 
 def execute(behavioral_prompt: str, strategy: str = "auto-heal") -> None:
-    """Execute the active Delta Spec.
+    """Execute the active Delta Spec via Void Editor.
 
     Reads the user's CLI flag to determine the configuration (auto-heal or tdd).
     Streams the terminal output directly to the user so they can monitor git commits 
@@ -371,25 +371,26 @@ def execute(behavioral_prompt: str, strategy: str = "auto-heal") -> None:
             f"Please add logging automatically as you write the code. If no logging already exists, use: {logging_fw}."
         )
 
-    # Note: we use `aider` assuming it is the agent CLI the user runs in their environment.
+    # Void Editor — AI-native code editor (fork of VS Code).
+    # Void's CLI opens the project and accepts an inline task.
     cmd = [
-        "aider",
-        "--test-cmd",
-        test_cmd,
-        "--message",
-        msg
+        "void",
+        "--goto", str(delta_spec),
+        "--task",
+        msg,
     ]
     
-    print(f"\n✔ Launching execution engine...\n")
-    print(f"Command: {' '.join(cmd)}\n")
+    print(f"\n✔ Launching Void Editor execution engine...\n")
+    print(f"Command: void --goto {delta_spec} --task [prompt]\n")
     
     try:
         # Stream output to terminal
         subprocess.run(cmd)
     except FileNotFoundError:
         print(
-            "✘ Execution failed: 'aider' command not found.\n"
-            "  Please ensure aider is installed (e.g. 'pipx install aider-chat').",
+            "✘ Execution failed: 'void' command not found.\n"
+            "  Please ensure Void Editor is installed\n"
+            "  (see https://voideditor.com).",
             file=sys.stderr,
         )
         raise SystemExit(1)
