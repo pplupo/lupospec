@@ -31,7 +31,7 @@ The project strictly adheres to the following layout:
 
 * **`lupospec_init.py`:** Bootstraps a greenfield project. It natively creates a `docs/architecture/` directory, writes a Constitution, a PRD template (`spec.md`), an implementation plan template (`plan.md`), and optionally initializes a Git repository.
 * **`lupospec_workflow.py`:** Replaces `openspec propose` and `openspec archive`. It scans existing architecture docs, creates new Markdown change proposals (Delta Specs) in `openspec/changes/`, and subsequently moves completed changes into `openspec/changes/archive/` with a date prefix.
-* **`lupospec_agent_execution.py`:** The powerhouse script that acts as the proxy for your AI agent (we default to executing `aider`). It auto-detects your testing environment and your logging framework, loads your behavioral instructions, parses your tasks, and kicks off your chosen execution strategy directly in your terminal.
+* **`lupospec_agent_execution.py`:** The powerhouse script that acts as the proxy for **Antigravity** (Google DeepMind's agentic coding assistant, invoked via the `gemini` CLI). It auto-detects your testing environment and your logging framework, loads your behavioral instructions, parses your tasks, and kicks off your chosen execution strategy directly in your terminal.
 * **`lupospec_cli.py`:** The router script that exposes the `lupo` command-line tool.
 
 ---

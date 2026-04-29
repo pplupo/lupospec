@@ -322,7 +322,7 @@ def parse_tasks(proposal_path: Path) -> list[str]:
 
 
 def execute(behavioral_prompt: str, strategy: str = "auto-heal") -> None:
-    """Execute the active Delta Spec.
+    """Execute the active Delta Spec via Antigravity (Gemini CLI).
 
     Reads the user's CLI flag to determine the configuration (auto-heal or tdd).
     Streams the terminal output directly to the user so they can monitor git commits 
@@ -371,25 +371,24 @@ def execute(behavioral_prompt: str, strategy: str = "auto-heal") -> None:
             f"Please add logging automatically as you write the code. If no logging already exists, use: {logging_fw}."
         )
 
-    # Note: we use `aider` assuming it is the agent CLI the user runs in their environment.
+    # Antigravity (Google DeepMind) via the `gemini` CLI.
     cmd = [
-        "aider",
-        "--test-cmd",
-        test_cmd,
-        "--message",
-        msg
+        "gemini",
+        "--prompt",
+        msg,
     ]
     
-    print(f"\n✔ Launching execution engine...\n")
-    print(f"Command: {' '.join(cmd)}\n")
+    print(f"\n✔ Launching Antigravity execution engine...\n")
+    print(f"Command: {' '.join(cmd[:3])} [prompt]\n")
     
     try:
         # Stream output to terminal
         subprocess.run(cmd)
     except FileNotFoundError:
         print(
-            "✘ Execution failed: 'aider' command not found.\n"
-            "  Please ensure aider is installed (e.g. 'pipx install aider-chat').",
+            "✘ Execution failed: 'gemini' command not found.\n"
+            "  Please ensure the Gemini CLI is installed\n"
+            "  (see https://github.com/google-gemini/gemini-cli).",
             file=sys.stderr,
         )
         raise SystemExit(1)
